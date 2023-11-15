@@ -1,0 +1,459 @@
+\documentclass[12pt]{article}  
+\usepackage{graphicx, amsmath, amssymb, relsize, parskip}
+\usepackage{tikz}
+\voffset=-.8cm
+\hoffset=-1.5cm
+\setlength{\textheight}{24cm}
+\setlength{\textwidth}{16cm}
+\pagestyle{myheadings}
+\newtheorem{q} {Question}
+\newcommand{\df}{\displaystyle\frac}
+\newcommand{\beq}{\begin{q}\hskip-.2cm)\hskip.2cm}
+\newcommand{\eq}{\end{q}\newpage}
+\markright {MATH163 Homework 2\hskip2cm Show all your work.}
+\begin{document}
+{\bf Homework 2 MATH163\hskip1cm Show all your work to get credit. }  \vskip0.2cm 
+{\bf Name}: Ayush Pandejee {\bf Due Date}:  \underline{11/04/23} 
+\vskip.5cm
+%%%questions 
+\beq Let $S = \{\emptyset ,a,\{a\}\}$. Determine whether each of these is an element of S, a subset of S, neither, or both.\\
+
+(a) \{a\}\\
+
+The power set of S is P(S) = $\{\emptyset, \{\emptyset\}, \{a\}, \{\{a\}\}, \{\emptyset, a\}, \{\emptyset, \{a\}\}, \{a, \{a\}\}, \{\emptyset ,a,\{a\}\} \hspace{.5mm}\}$\\
+
+\{a\} is both an element of S and a subset of S.\\
+
+(b) \{\{a\}\} \\
+
+Using the Power Set of S from Part A, \{\{a\}\} is a subset of S.\\
+
+(c) $\emptyset$\\
+
+$\emptyset$ is both an element of S and a subset of S. The empty set is a subset of every set, as well as S.\\
+
+(d) $\{\{\emptyset\}, a\}$\\
+
+$\{\{\emptyset\}, a\}$ is neither an element of S nor a subset of S. $\{\emptyset\}$ contains one element, the empty set. It cannot be put with a to form a subset of S nor it is it an alement of S.\\
+
+(e) $\{\emptyset\}$\\
+
+$\{\emptyset\}$ is not an element of S.\\
+
+(f) $\{\emptyset,a\}$\\
+
+$\{\emptyset,a\}$ is a subset of S.\\
+
+\eq
+\beq You begin with \$1000. You invest it at 5\% compounded annually, but at the end of each year you withdraw \$100 immediately after the interest is paid.\\
+
+(a) Set up a recurrence relation and initial condition for the amount you have after n years.\\
+
+$a_{n} = 1.05a_{n-1} - 100$, $a_{0} = 1000$\\
+
+(b) How much is left in the account after you have withdrawn \$100 at the end of the third year?\\
+
+$a_{1} = 1.05(1000) - 100$\\
+
+$a_{2} = 1.05(950) - 100 =  897.5 $  \\
+
+$a_{3} = 1.05(897.5)  - 100 = 842.375 $ \\
+
+(c) Find a formula for $a_n$.\\
+
+$a_{n} = 1.05a_{n-1} - 100$ \\
+
+$a_{n-1} = 1.05a_{n-2} - 100$ \\
+
+$a_{n} = 1.05^2(a_{n-2}) - 100(1.05) - 100 $ \\
+
+$a_{n} = 1.05^3(a_{n-3}) - 100(1.05)^2 - 100(1.05) - 100  $ \\
+
+$a_{n} = 1.05^n (a_0) - 100 (\mathlarger \Sigma^{n-1}_{i=0} (1.05)^i )$\\
+
+(d) Use the formula to determine how long it takes before the last withdrawal reduces the balance in the account to \$0.\\
+
+$0 = 1.05^n (a_0) - 100 (\mathlarger \Sigma^{n-1}_{i=0} (1.05)^i )$\\
+
+$0= 1.05^n (1000) - 100(1(\frac{1-1.05^n}{1-1.05})$\\
+
+$0 = 1.05^n (1000) + 2000(1-1.05^n)$ \\
+
+$0 = 1.05^n(1000) - 2000(1.05^n) + 2000$ \\
+
+$0 = -1000(1.05^n) + 2000$ \\
+
+$-2000 = -1000(1.05^n)$ \\
+
+$ 2 = 1.05^n $ \\
+
+$n = 14.2$\\
+
+\eq
+\beq  If $P(A)$ means the power set of $A$,\\
+
+(a) Prove that $P(A)\cup P(B) \subset P(A\cup B)$ is true for all sets A and B.\\
+
+Lets assume value $x \in P(A) \cup P(B)$.\\
+
+$x \in (P(A) \vee P(B))$\\
+
+$x \in P(A) \vee x \in P(B) -> x \subset A \vee x \subset B$\\
+
+$x \subset A \vee x \subset B \equiv x \subset (A \vee B)$\\
+
+$x \subset (A \vee B) -> P(A)\cup P(B) \subset P(A\cup  B)$\\
+
+(b) Prove that the converse of (a) is not true. That is, prove that:\\ $P(A \cup B) \subset P(A) \cup P(B)$ is false for some sets A and B.\\
+
+If we set A = $\{1\}$ and B = $\{2, 3\}$\\
+
+P(A) = $\{\emptyset, \{1\} \}$ \\
+
+P(B) = $\{\emptyset, \{2\}, \{3\}, \{2, 3\}  \}$ \\
+
+P($A\cup B$) = $\{\emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\} \}$\\
+
+$P(A) \cup P(B) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{2, 3\} \} $ \\
+
+Let x = $\{1, 3\} $\\
+
+$(\{1, 3\} \in P(A \cup B)) \land (\{1, 3 \} \notin P(A) \cup P(B)$, so the converse of (a) is not true and false for some sets A and B.\\
+
+\eq
+\beq Prove that the following is true for all sets A, B, and C: if $A \cap C \subset B \cap C$ and $A \cup C \subset B \cup C$, then $A \subset B$.\\
+
+Assume that $A \notin B$.\\
+
+Case 1: Element $x \in C$:\\
+
+If $x \in C$, then $x \in A \cap C$, and since $A \cap C \subset B \cap C$, we have $x \in B \cap C$. This implies that $x \in B$ because x is in both $B \cap C$ and C.\\
+
+Case 2: Element $x \notin C$:\\
+
+If $x \notin C$, then $x \in A \cap C$, and since $A \cap C \subset B \cap C$, we have $x \in B \cap C$. This implies that $x \in B$ because x is in both $B \cap C$ and C.\\
+
+In both cases, $x \in B$ which contradicts $A \notin B$, concluding that $A \subset B$.
+
+\eq
+\beq Let $f:R\rightarrow R$ have the rule $f(x) = \lceil 3x\rceil + 1$and  $g:R\rightarrow R$ have the rule $g(x)=\df{x}{3}$.\\
+
+(a) Find $(f o g)^{-1}(\{2.5\})$.\\
+
+$f o g = \lceil x \rceil + 1 $. However, to get 2.5, $\lceil x \rceil$ has to equal 1.5, which cannot be possible because floor or ceiling functions always up or down to the nearest integer, respectively. So the answer for this is $\emptyset$.\\
+
+(b) Find $(f o g)^{-1}(\{2\})$.\\
+
+$f o g = \lceil x \rceil + 1 $. $(f o g)^{-1}\{ 2\} = x \in (0,1]$ because any number between 0 and 1 will get rounded up to 1 due to the ceiling function.\\
+
+\eq
+\beq Find a formula for the recurrence relation $a_n = 2a_{n-1} + 2^n, a_0 = 1$, using a recursive method.\\
+
+$a_n = 2a_{n-1} + 2^n$\\
+
+$a_{n-1} = 2a_{n-2} + 2^{n-1}$ \\
+
+$a_{n-1} = 2(2a_{n-2} + 2^{n-1}) + 2^n = 2^2 (a_{n-2}) + 2^n + 2^n = 2^2a_{n-2} + 2(2^n)$ \\
+
+$a_{n-2} = 2^2(2a_{n-3} + 2^{n -2 }) + 2^n = 2^3(a_n{n-3}) + 2^n + 2(2^n) = 2^3(a_n{n-3}) + 3(2^n) $\\
+
+$a_n = 2^n(a_0) + n(2^n) $ \\
+
+$a_n = 2^n(1 + n) $\\
+
+\eq
+\beq Find a formula for an infinite sequence $a_1,a_2,a_3,...$ that begins with the terms 1,2,1,2,1,2,1 and continues this alternating pattern.\\
+
+$a_n = 1 +((n+1) \mod 2)$\\
+
+Basically, with the (n+1) mod 2, any number n that is odd, such as 5, plus 1 mod 2 will equal 0 and any number n that is even, such as 6, plus 1 mod 2 will be equal to 1. Then you just add 1 to get your answer.\\ 
+
+\eq
+\beq Find a function $f : {\mathbb Z} \rightarrow {\mathbb N} $ that is one-to-one but not onto.\\\par
+
+$f(x) = 2x - 2$ when $x \geq 0$ and $-2x + 1$ when $x < 0$\\
+
+This works because the function is one to one because no two elements in the domain of f correspond to the same element in the range of f. The function is not onto, however, because the function f's image is not equal to the codomain.\\
+
+Find a function $g: {\mathbb N} \rightarrow {\mathbb Z} $ that is one-to-one and  onto.\\
+
+$g(x) = x/2$ when x is even and $-(n-1)/2$ when x is odd\\
+
+This works because function is one to one because no two elements in the domain of f correspond to the same element in the range of f. The function is also onto because the function f's image is equal to the codomain.\\
+
+\eq
+\beq Find  $1+x^2 +x^4 +x^6 +x^8 +... $ assuming  $0<|x|<1$.\\
+
+Sum of geometric sequences: $1/(1-r)$.\\
+
+Since the common difference of the sequence above is $x^2$, the answer is $1/(1-x^2)$.\\
+
+\eq
+\beq Use the Principle of Mathematical Induction to  show this inequality is true for all  integers $n\geq 2$:\hskip1cm$\displaystyle\sum_{i=1}^n\df{1}{\sqrt{i\,\,}} > \sqrt{n\,\,}$\\
+
+Base Case (n = 2):
+
+For \(n = 2\), we have:
+\[
+\sum_{i=1}^2 \frac{1}{\sqrt{i}} = \frac{1}{\sqrt{1}} + \frac{1}{\sqrt{2}} = 1 + \frac{1}{\sqrt{2}}
+\]
+Now, \(\sqrt{2} < 2\) and \(\frac{1}{\sqrt{2}} > \frac{1}{2}\). Therefore, \(1 + \frac{1}{\sqrt{2}} > 1 + \frac{1}{2} = \frac{3}{2}\), which is greater than \(\sqrt{2}\). So, the base case is true.
+
+Inductive Hypothesis:
+
+Assume that for some positive integer \(k \geq 2\), the inequality
+\[
+\sum_{i=1}^k \frac{1}{\sqrt{i}} > \sqrt{k}
+\]
+is true.
+
+Inductive Step:
+
+We need to prove that for \(n = k + 1\), the inequality
+\[
+\sum_{i=1}^{k+1} \frac{1}{\sqrt{i}} > \sqrt{k+1}
+\]
+is true.
+
+Starting with the left-hand side:
+\[
+\begin{aligned}
+\sum_{i=1}^{k+1} \frac{1}{\sqrt{i}} &= \left(\sum_{i=1}^k \frac{1}{\sqrt{i}}\right) + \frac{1}{\sqrt{k+1}}
+\end{aligned}
+\]
+
+By the inductive hypothesis, we know that \(\sum_{i=1}^k \frac{1}{\sqrt{i}} > \sqrt{k}\). Therefore:
+\[
+\begin{aligned}
+\sum_{i=1}^{k+1} \frac{1}{\sqrt{i}} &> \sqrt{k} + \frac{1}{\sqrt{k+1}}
+\end{aligned}
+\]
+
+Now, we need to prove that \(\sqrt{k} + \frac{1}{\sqrt{k+1}} > \sqrt{k+1}\). We can do this by squaring both sides of the inequality:
+\[
+\begin{aligned}
+\left(\sqrt{k} + \frac{1}{\sqrt{k+1}}\right)^2 &> (\sqrt{k+1})^2
+\end{aligned}
+\]
+
+Expanding and simplifying the left-hand side:
+\[
+\begin{aligned}
+k + 2\sqrt{k}\cdot\frac{1}{\sqrt{k+1}} + \left(\frac{1}{\sqrt{k+1}}\right)^2 &> k+1
+\end{aligned}
+\]
+
+Since \(\frac{1}{\sqrt{k+1}} > 0\), we can safely remove it from both sides of the inequality:
+\[
+\begin{aligned}
+k + 2\sqrt{k}\cdot\frac{1}{\sqrt{k+1}} &> k+1
+\end{aligned}
+\]
+
+Now, subtracting \(k\) from both sides:
+\[
+\begin{aligned}
+2\sqrt{k}\cdot\frac{1}{\sqrt{k+1}} &> 1
+\end{aligned}
+\]
+
+Simplifying further by multiplying both sides by \(\sqrt{k+1}\):
+\[
+\begin{aligned}
+2\sqrt{k} &> \sqrt{k+1}
+\end{aligned}
+\]
+
+Squaring both sides again:
+\[
+\begin{aligned}
+4k &> k+1
+\end{aligned}
+\]
+
+Subtracting \(k\) from both sides:
+\[
+\begin{aligned}
+3k &> 1
+\end{aligned}
+\]
+
+Since \(k \geq 2\), it's clear that \(3k > 1\), and the inequality is true. Therefore:
+\[
+\begin{aligned}
+\sqrt{k} + \frac{1}{\sqrt{k+1}} &> \sqrt{k+1}
+\end{aligned}
+\]
+
+Now, we can conclude that:
+\[
+\begin{aligned}
+\sum_{i=1}^{k+1} \frac{1}{\sqrt{i}} &> \sqrt{k} + \frac{1}{\sqrt{k+1}} > \sqrt{k+1}
+\end{aligned}
+\]
+
+So, the inequality holds for \(n = k+1\).
+
+By the Principle of Mathematical Induction, we have shown that the inequality
+\[
+\sum_{i=1}^n \frac{1}{\sqrt{i}} > \sqrt{n}
+\]
+is true for all integers \(n \geq 2\).
+
+
+\eq
+\beq Prove that for all positive integers n,  $3^{2^n} -1$ is divisible by $2^{n+2}$.\\
+
+Base Case: $n = 1$\\
+
+$3^{2^1} - 1 = 3^2 - 1 = 9 - 1 = 8 = 2^{1+2} = 2^3$\\
+
+I.H. Assume that for some positive integer k, $3^{2^k} -1$ is divisible by $2^{k+2}$.\\
+
+I.S. $n = k + 1$\\
+
+\(n = k+1\), \(3^{2^{k+1}} - 1\) is divisible by \(2^{k+3}\).\\
+
+\[3^{2^{k+1}} - 1 = (3^{2^k})^2 - 1\]\\
+
+Difference of squares formula: \(a^2 - b^2 = (a+b)(a-b)\), where \(a = 3^{2^k}\) and \(b = 1\):\\
+
+\[3^{2^{k+1}} - 1 = (3^{2^k} + 1)(3^{2^k} - 1)\]\\
+
+From our inductive hypothesis, \(3^{2^k} - 1\) is divisible by \(2^{k+2}\), so \(3^{2^k} - 1 = 2^{k+2} \cdot m\), where \(m\) is an integer.\\
+
+\[3^{2^{k+1}} - 1 = (3^{2^k} + 1)(2^{k+2} \cdot m)\]\\
+
+Prove that this expression is divisible by $2^{k+3}$, by showing that $3^{2^k} + 1$ is divisible by $(2)$.\\
+
+Since \(3^{2^k} + 1\) is the sum of an even number (\(3^{2^k}\)) and an odd number (\(1\)), it is always an odd number. Any odd number is divisible by 2 once. Therefore, \(3^{2^k} + 1\) is divisible by 2.\\
+
+Hence, \(3^{2^{k+1}} - 1\) is divisible by \(2^{k+3}\).\\
+
+By induction, for all positive integers \(n\), \(3^{2^n} - 1\) is divisible by \(2^{n+2}\).\\
+
+\eq
+\beq Find a formula for $$(1-\df1{2^2})(1-\df1{3^2})(1-\df1{4^2})(1-\df1{5^2})...(1-\df1{n^2})$$  where $n \geq 2$, and use the Principle of Mathematical Induction to prove that the formula is correct.\\
+
+Base Case (n = 2):
+
+For \(n = 2\), the formula gives:
+
+\[
+\frac{(2^2 - 1)}{2^2} = \frac{3}{4}
+\]
+
+The product in the original expression is \((1 - \frac{1}{2^2}) = \frac{3}{4}\). So, the base case is true.
+
+Inductive Hypothesis:
+
+Assume that the formula holds for some positive integer \(k \geq 2\):
+
+\[
+(1 - \frac{1}{2^2})(1 - \frac{1}{3^2}) \ldots (1 - \frac{1}{k^2}) = \frac{(2^2 - 1)}{2^2} \cdot \frac{(3^2 - 1)}{3^2} \ldots \frac{(k^2 - 1)}{k^2}
+\]
+
+Inductive Step:
+
+We need to show that the formula holds for \(n = k + 1\). Using the inductive hypothesis, we have:
+
+\[
+(1 - \frac{1}{2^2})(1 - \frac{1}{3^2}) \ldots (1 - \frac{1}{k^2}) \cdot (1 - \frac{1}{(k+1)^2}) = \left(\frac{(2^2 - 1)}{2^2} \cdot \frac{(3^2 - 1)}{3^2} \ldots \frac{(k^2 - 1)}{k^2}\right) \cdot (1 - \frac{1}{(k+1)^2})
+\]
+
+Now, we can simplify the right-hand side using the general form for the formula:
+
+\[
+\left(\frac{(2^2 - 1)}{2^2} \cdot \frac{(3^2 - 1)}{3^2} \ldots \frac{(k^2 - 1)}{k^2}\right) \cdot (1 - \frac{1}{(k+1)^2}) = \frac{(2^2 - 1)}{2^2} \cdot \frac{(3^2 - 1)}{3^2} \ldots \frac{(k^2 - 1)}{k^2} \cdot \frac{(k+1)^2 - 1}{(k+1)^2}
+\]
+
+We can now expand the product:
+
+\[
+\frac{(2^2 - 1)}{2^2} \cdot \frac{(3^2 - 1)}{3^2} \ldots \frac{(k^2 - 1)}{k^2} \cdot \frac{(k+1)^2 - 1}{(k+1)^2} = \frac{(k+1)^2 - 1}{(k+1)^2}
+\]
+
+Now, notice that this is exactly the form of the formula for \(n = k + 1\). Therefore, the formula holds for \(n = k + 1\).
+
+By mathematical induction, we have shown that the formula:
+
+\[
+    (1 - \frac{1}{2^2})(1 - \frac{1}{3^2}) \ldots (1 - \frac{1}{n^2}) = \frac{(2^2 - 1)}{2^2} \cdot \frac{3^2 - 1}{3^2} \ldots \frac{(n^2 - 1)}{n^2}\]
+
+is correct for all positive integers \(n \geq 2\).
+
+\eq
+\beq Which amounts of stamps can be formed using just five cents stamp and nine cents stamp? Prove your answer using strong induction.\\
+
+Base Case:
+
+For small values, we can directly observe that the following amounts can be formed using only 5-cent and 9-cent stamps:
+
+\begin{itemize}
+  \item 5 cents: One 5-cent stamp.
+  \item 9 cents: One 9-cent stamp.
+  \item 10 cents: Two 5-cent stamps.
+  \item 14 cents: One 5-cent stamp and one 9-cent stamp.
+  \item 15 cents: Three 5-cent stamps.
+  \item 18 cents: Two 9-cent stamps.
+  \item 19 cents: Two 5-cent stamps and one 9-cent stamp.
+  \item 20 cents: Four 5-cent stamps.
+  \item 23 cents: One 5-cent stamp and three 9-cent stamps.
+  \item 24 cents: Three 5-cent stamps and one 9-cent stamp.
+  \item 25 cents: Five 5-cent stamps.
+\end{itemize}
+
+
+Now, we will use strong induction to show that any amount greater than or equal to 32 cents can be formed.
+
+Inductive Hypothesis:
+
+Assume that for all positive integers \(k\) such that \(k \geq 32\), we can form \(k\) cents using only 5-cent and 9-cent stamps.
+
+Inductive Step:
+
+We want to show that for \(n = k + 1\), we can form \((k + 1)\) cents using these stamps.
+
+Consider \(n\) cents where \(n \geq 32\). We have two possibilities:
+
+\begin{enumerate}
+  \item Use one 5-cent stamp to form \((n - 5)\) cents. Since \(n - 5 \geq 32\), by the inductive hypothesis, we can form \((n - 5)\) cents using the stamps.
+
+  \item Use one 9-cent stamp to form \((n - 9)\) cents. Since \(n - 9 \geq 32\), by the inductive hypothesis, we can form \((n - 9)\) cents using the stamps.
+\end{enumerate}
+
+In either case, we can add one more 5-cent or 9-cent stamp to what was formed for \((n - 5)\) or \((n - 9)\) cents, respectively, to get \((n + 1)\) cents.
+
+Therefore, for any \(n \geq 32\), we can form \((n + 1)\) cents using only 5-cent and 9-cent stamps.
+
+By strong induction, we have shown that any amount greater than or equal to 32 cents can be formed using these stamps.
+
+\eq
+\beq  Let P( n) be the statement that a postage of n cents can be formed using just 3- cent stamps and 5- cent stamps. The parts of this exercise outline a strong induction proof that P( n) is true for $n \geq 8$.\\ 
+
+a) Show that the statements P( 8), P( 9), and P( 10) are true, completing the basis step of the proof. \\ 
+
+
+$3 + 5 = 8, 3 + 3 = 9, 5 + 5 = 10$, making P (8), P (9), and P (10)true.\\
+
+b) What is the inductive hypothesis of the proof?\\ 
+
+I.H.: P(n) is true for $8 \leq n \leq k$, where $k \geq 10$.\\ 
+
+c) What do you need to prove in the inductive step?\\ 
+
+Prove that P(k+1) is true.\\
+
+d) Complete the inductive step for $k \geq 10$ .\\
+
+If $k \geq 10$, then k + 1 = (k - 2) + 3. Since $k - 2 \geq 8$, then P (k - 2) is true due to the I.H.\\
+
+A postage of k - 2 cents can be paid by using 3-cent and 5-cent stamps. Adding one 3-cent stamp, we can pay a postage of k + 1 cents, making P(k + 1) is true.\\
+
+e) Explain why these steps show that this statement is true whenever $n \geq 8$.\\
+
+It shows that for greater than or equal to 8, P(n) is true. When k = 10, and set P(8) as P(k-2), adding a 3-cent coin makes it P(k+1). Getting to the next number, you just have to add k.
+
+\eq 
+%%questions
+\end{document}
