@@ -1,0 +1,208 @@
+\documentclass[12pt]{article}  
+\usepackage{latexsym,graphicx}
+\usepackage{tikz}
+\usepackage{amsmath}
+\voffset=-2cm
+\hoffset=-1.5cm
+\setlength{\textheight}{24cm}
+\setlength{\textwidth}{15cm}
+\usepackage{fancyhdr}
+\newtheorem{q} {Q}
+\newcommand{\beq} {\begin{q}\hskip-.3cm)\hskip.2cm  }
+\newcommand{\eeq} {\end{q}\newpage}
+\newcommand{\df}{\displaystyle\frac}
+\pagestyle{fancy}
+\fancyhf{} % clear all headers and footers fields
+\fancyhead[R] { {\bf MATH163 Homework 3}}
+\fancyhead[L]{Show All your work}
+\fancyfoot[C]{State the reasoning to solve this problem}
+\begin{document}
+{\bf Name}: Ayush Pandejee \hspace*{0.2cm} {\bf Section}: Math 163; Exam 3  \hspace*{0.2cm} {\bf Date}: 11/17/23 \vskip.5cm
+%%questions
+\beq Find the number of strings of length 10 of letters of the alphabet, with no repeated letters, that have vowels in the first two positions (y is a vowel). \\
+
+We can simply use the product rule and permutations for this problem.\\
+
+Lets imagine there to be ten empty spots of the strings: $\underset{\text{{-----}}}{}$ $\underset{\text{{-----}}}{}$ $\underset{\text{{-----}}}{}$ $\underset{\text{{-----}}}{}$ $\underset{\text{{-----}}}{}$ $\underset{\text{{-----}}}{}$ $\underset{\text{{-----}}}{}$ $\underset{\text{{-----}}}{}$ $\underset{\text{{-----}}}{}$ $\underset{\text{{-----}}}{}$\\
+
+Since the first two spots are going to be taken with vowels, which we have six of since y is a vowel, and since there is no repeated letters, the first two spaces will be: $\underset{\text{{-----}}}{6}\times\underset{\text{{-----}}}{5}$\\
+
+Next, there are 26 letters in the alphabet, but since two have already been used with the vowels in the beginning, we are left with 24 letters. None of these letters can repeat as well, so we are given: $\underset{\text{{-----}}}{24}\times\underset{\text{{-----}}}{23}\times\underset{\text{{-----}}}{22}\times\underset{\text{{-----}}}{21}\times\underset{\text{{-----}}}{20}\times\underset{\text{{-----}}}{19}\times\underset{\text{{-----}}}{18}\times\underset{\text{{-----}}}{17}$\\
+
+Finally, put the two together to get the final answer of: $\underset{\text{{-----}}}{6}\times\underset{\text{{-----}}}{5}\times\underset{\text{{-----}}}{24}\times\underset{\text{{-----}}}{23}\times\underset{\text{{-----}}}{22}\times\underset{\text{{-----}}}{21}\times\underset{\text{{-----}}}{20}\times\underset{\text{{-----}}}{19}\times\underset{\text{{-----}}}{18}\times\underset{\text{{-----}}}{17}$
+
+\eeq
+\beq Ten men and ten women are to be put in a row. Find the number of possible rows if no two of the same sex stand adjacent.\\
+
+We can simply use the product rule and factorials for this problem.\\
+
+First, the ten men have to be arranged in different positions so that no two of the same sex stand ajacent. Since there are ten men, the first man can go in 10 different spaces, the second in 9, the third in 8, and so forth, giving us 10!.\\ 
+
+We can repeat the same step for womenm giving us 10! for women as well.\\
+
+Finally, the rows can be arranged 2 ways, one where a man is in the front and the other where a women is standing in the front. So the final answer is $2 \times 10! \times 10!$.\\
+
+\eeq
+\beq If positive integers are chosen at random, what is the minimum number you must have in order to guarantee that two of the chosen numbers are congruent modulo 11 (congruent module 11 means that they have the same remainder when divided by 11. For example 20 and 185).\\
+
+We can use the pigeon hole theorem to solve this problem.\\
+
+A value x, modulo 11 must give you one of 11 values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, and 10.\\
+
+To make sure that two of the chosen numbers are congruent modulo 11, you have to choose two numbers that have both the same number out of those 11 values given. Lets say that the first 11 values that you choose do not give you the congruent modulo 11 and give u a single, distinct, one of the 11 values. The 12th value you choose has to give you one of the 11 values, making 12 be the answer to this problem.\\
+
+Basically, you have to choose 12 valyes to make sure that two of the chosen numbers are congruent modulo 11.\\
+
+\eeq
+\beq What is the minimum number of cards that must be drawn from an ordinary deck of cards to guarantee that you have been dealt \\ (a) at least three of at least one suit?\\ (b) at least three clubs?\\
+
+a) We can use the pigeon hole theorem for this problem.\\
+
+Basically, to find the minimum number of cards that must be drawn from 52 cards that guarantee you draw at least three of at least one suit, you have to figure out how many cards you can draw before you draw three of at least one suit. There are 4 different suits, and before you draw three, you have to draw 2 of each suit. $2 \times 4$ is 8, so you can draw 8 cards (2 from each of the 4 suits) before drawing three of at least one suit. Since you have drawn 8 cards already, the 9th card you pick up guarantees that it is gonna be the third card of atleast one of the 4 suits.\\
+
+b) We can also use the pigeon hole theorem for this one as well.\\
+
+Because there are 13 cards in each of the 4 suits, there is a possibility that you can draw cards from all of the suits except the clubs. So $13 \times 3$ is 39 cards. Then, since you have drawn cards from all of the 3 out of 4 suits, you know that the next 3 cards you pick up are going to be clubs, so you have to pick up a minimum of 42 cards to guarantee that you draw at least 3 clubs.\\
+
+\eeq
+\beq A class has 30 students enrolled. In how many ways can: \\ (a) four be put in a row for a picture?\\ (b) all 30 be put in a row for a picture?\\ (c) all 30 be put in two rows of 15 each (that is, a front row and a back row) for a picture?\\
+
+a) For this one, we use permutation since order matters (they are people).\\
+
+It would be, P(30, 4), or 30 choose 4, since there are 30 students and there needs to be any 4 students put in a row for a picture.\\
+
+b) We can use factorials for this one.\\
+
+Since there is a class of 30 students, and you have to arrange all 30 for a picture, then you can put the first student in 30 places, the second in 29 places, and so forth, giving you 30!.\\
+
+c) You can use permutations and product rule for this.\\
+
+Since there are two rows of 15 each, and you are choosing 15 students to be in each row, you have to do $2 \times P(30,15)$.\\
+
+\eeq
+\beq Find the coefficient of $a^{39}b^{22}$ in the expansion of $(3a - 5b)^{61}$.\\
+
+We can use binomial expansion to solve this.\\
+
+$(x+y)^n = \sum^n_{j=0} \binom{n}{j} x^{n-j} y^j = \binom{n}{0} x^n y^0 + \binom{n}{1}x^{n-1} y^1 + \dots +  \binom{n}{n} x^0 y^n$\\
+
+(61 - j = 39)\\
+
+(j = 22)\\
+
+$(3a - 5b)^{61} = \sum^61_{j=0} \binom{61}{22} 3a^{61-22} (-5b)^{22}$.\\
+
+$\implies \binom{61}{22} 3^{39} (-5)^{22}$\\
+
+\eeq
+\beq Write the expansion of $(x^2 -\df1 {x^2})^9$ .\\
+
+You can use binomial expansion for this.\\
+
+$({x^2 -\frac{1}{x^2}} ) ^9$ = $\binom{9}{0} (x^2)^9 (-\frac{1}{x^2})^0 + \binom{9}{1} (x^2)^8 (-\frac{1}{x^2})^1 + \binom{9}{2} (x^2)^7 (-\frac{1}{x^2})^2 + \binom{9}{3} (x^2)^6 (-\frac{1}{x^2})^3 + \binom{9}{4} (x^2)^5 (-\frac{1}{x^2})^4$ \\$ + \binom{9}{5} (x^2)^4 (-\frac{1}{x^2})^5 + \binom{9}{6} (x^2)^3 (-\frac{1}{x^2})^6 + \binom{9}{7} (x^2)^2 (-\frac{1}{x^2})^7 + \binom{9}{8} (x^2)^1 (-\frac{1}{x^2})^8 + \binom{9}{9} (x^2)^0 (-\frac{1}{x^2})^9$.\\
+
+\eeq
+\beq In how many ways can 7 of the 8 letters in CHEMISTS be put in a row?\\
+
+We can use sum rule, product rule, permutations, combinations, and factorials to solve this.\\
+
+There are basically two cases for this.\\
+
+Case 1: You choose 7 letters, but only one of the S's.\\
+
+Since each of these letters are unique, and since this is a word, order matters. You can use permutation for this. There are 7 letters that need to go in 7 different spots, giving us P(7,7). This is also equal to 7!.\\
+
+Case 2: You choose 7 letters, including both of the S's.\\
+
+Since there are 5 unique letters and two similar letters in this choice, we need to do a couple of things for this. We can group the two S's together as one letter. So now we have 6 letters. We need to find 5 different positions for these 6 letters (remember the 2 S's are grouped together as one letter). In this case, order does not matter, so we can do C(6,5), which equals 6. Now, we cannot forget that they also need to still be ordered, so all of the 7 letters in this group can be ordered in 7 different ways, giving us P(7,7), which equals 7!. Now we can multiply both 7! and 6 together due to the product rule. Finally, we need to divide this whole thing by 2, since every word that will be formed will be formed two times because the S's can be swapped but still form the same word.\\
+
+Finally, we can add the two cases together, due to the sum rule giving us the answer: $7! + (6 \times 7!)/2$.\\
+
+\eeq
+\beq Four players are playing bridge. In how many ways can they be dealt hands of cards? (In bridge, a hand of cards consists of 13 out of 52 cards.)\\
+
+We can use combination for this problem as well as the division rule.\\
+
+First off, since 4 people are playing, that means that the first player would be getting 13 random cards from 52, so C(52, 13). After the first player, the second would be getting 13 from 39 cards, so C(39,13). So the third is C(26,13) and the fourth is C(13,13).\\
+
+Now we can apply the division rule, which states that there is n/d ways to do a task if it can be done using a procedure
+that can be carried out in n ways, and for every way w, exactly d of the n ways correspond to
+way w. In this case, there are 4 people, of which they can get any of the hands. The first person can get any of the 4 hands, the second person can get any of the 3 hands after the first person gets their hand, and so forth. So n is 4!. Finally, d is the different suits, $C(52,13) \times C(39,13) \times C(26,13) \times C(13,13)$.\\
+
+The answer is 4!/($C(52,13) \times C(39,13) \times C(26,13) \times C(13,13)$).\\
+
+\eeq
+\beq Prove the identity $$\binom {n} {r}\binom{r}{k}=\binom {n-k} {r-k} \binom{n}{k}$$ with $n\geq r \geq k > 0$ \\ a) algebraically\\ a) using a combinatorial argument (hint: think of disjoint sets) \\
+
+a) $$\binom {n} {r}\binom{r}{k}=\binom {n-k} {r-k} \binom{n}{k}$$\\
+
+RHS expanded: $$\binom {n-k} {r-k} \binom{n}{k} = (n-k)!/((r-k)!(n-k-(r-k))!) \times n!/((n-k)!k!)$$\\
+
+$\implies n!/((r-k)!(n-r)!k!) \implies n!r!/((r-k)!(n-r)!k!r!) \implies n!/((n-r)!r!) \times r!/((r-k)!k!)$\\
+
+b) There are two sides of this. On the left side, we are choosing r elements from n and k elements from r. On the right, we are choosing r - k elements from n - k and k elements from n. All of k is chosen on the right side, so on both of the sides, you are choosing all from r and n.\\
+
+\eeq
+\beq Suppose that k and n are integers with $1 \leq k < n$. Prove the hexagon identity $${n - 1\choose k - 1} {n\choose k + 1} {n + 1\choose k} = {n - 1\choose k} {n\choose k - 1}{ n + 1\choose k + 1}$$ which relates terms in Pascal's triangle that form a hexagon.\\
+
+$\frac{(n-1)!}{(k-1)! ((n-1 - (k-1))!} * \frac{n!}{(k+1)!(n-(k+1))!} * \frac{(n+1)!}{k!(n-k+1)!} = \binom{n-1}{k} * \binom{n-1}{k} * \binom{n}{k - 1} * \binom{n + 1}{k + 1}$\\
+
+$\frac{(n-1)!}{(k-1)! ((n-k))!} * \frac{n!}{(k+1)!(n- k - 1)!} * \frac{(n+1)!}{k!(n-(k-1))!} = \binom{n-1}{k} * \binom{n-1}{k} * \binom{n}{k - 1} * \binom{n + 1}{k + 1}$ \\
+
+$\frac{(n-1)!}{k! ((n-k))!} * \frac{n!}{(k-1)!(n- k + 1)!} * \frac{(n+1)!}{(k+1)!(n- 1 - k)!} = \binom{n-1}{k} * \binom{n-1}{k} * \binom{n}{k - 1} * \binom{n + 1}{k + 1}$ \\
+
+$\implies {n - 1\choose k - 1} {n\choose k + 1} {n + 1\choose k} = {n - 1\choose k} {n\choose k - 1}{ n + 1\choose k + 1}$ \\
+
+\eeq
+\beq A circular r-permutation of n people is a seating of r of these n people around a circular table, where seatings are considered to be the same if they can be obtained from each other by rotating the table. Find a formula for the number of circular r-permutations of n people.\\
+
+For this one, we can use the division rule as well as permutations.\\
+
+Now we can apply the division rule, which states that there is n/d ways to do a task if it can be done using a procedure
+that can be carried out in n ways, and for every way w, exactly d of the n ways correspond to
+way w. In this case, there are n people, and out of that group, r people are being seated. Since order matters because we are talking about distinct people, n equals P(n,r), and d is equal to r because there is exactly r of the n people who are being seated.\\
+
+The answer is P(n,r)/r.\\
+
+\eeq
+\beq A baker bakes seven different kinds of muffins. If a box with 28 muffins is made with a random number of each kind of muffin, in how many ways can a box of muffins be prepared.\\
+
+We can use stars and bars to solve this problem.\\
+
+That theorem states that there is C(n + r - 1, r) r-combinations from a set with n elements
+when repetition of elements is allowed. Since repetition of the muffins is allowed, n in this case is 7 because there is 7 muffins baked, r is 28 because of the combinations made in a box. The answer is C(7 + 28 - 1, 28) = C(34,28).\\ 
+
+\eeq
+\beq How many solutions are there to the equation $\sum_{i=1}^{i =6}x_i= 31$, where $x_i, i = 1, 2, 3, 4, 5, 6$ is a nonnegative integer such that:\\ a) $x_i > 1$ for $i = 1,2,3,4,5,6$?\\ b) $x_1 \geq1, x_2 \geq2, x_3 \geq3, x_4\geq4, x_5 >5, \text{and } x_6 \geq6$?\\ c)$x_1 \geq 5$?\\d) $x_1 < 8$ and $x_2 >8$?\\
+
+a) We can use the stars and bars system for this.\\
+
+$(2 + x_{1}) + (2 + x_{2}) + (2 + x_{3}) + (2 + x_{4}) + (2 + x_{5}) + (2 + x_{6}) = 31, x_{i} \geq 0$ for $i = 1, 2, 3, 4, 5, 6$\\
+
+$x_{1} + x_{2} + x_{3} + x_{4} + x_{5} + x_{6} = 19$\\
+
+Using C(n + r - 1, r), the answer is C(6 + 19 - 1, 19) = C(24,19).\\
+
+b) We can use the stars and bars system for this.\\
+
+$(1 + x_{1}) + (2 + x_{2}) + (3 + x_{3}) + (4 + x_{4}) + (5 + x_{5}) + (6 + x_{6}) = 31, x_{i} \geq 0$ for $i = 1, 2, 3, 4, 5, 6$\\
+
+$x_{1} + x_{2} + x_{3} + x_{4} + x_{5} + x_{6} = 9$\\
+
+Using C(n + r - 1, r), the answer is C(6 + 9 - 1, 9) = C(14,9).\\
+
+c) Using the same system, since $x_{1}$ would have at least 5 stars, there are 26 stars to distribute.\\
+
+Using C(n + r - 1, r), the answer is C(5 + 26 - 1, 26) = C(31,26).\\
+
+d) Using the same system, since $x_{2}$ would have at least 9 stars, there would be 22 stars left to distribute.\\
+
+Using C(n + r - 1, r), the answer is C(27,22).\\
+
+We also have to consider $x_{1}$ to have less than 8 stars. Following the same steps above, we are left with C(19,14).\\
+
+Finally, we have to subtract the two, C(31,26) - C(27,22), to get the answer.\\
+
+\eeq
+%%questions
+\end{document}
